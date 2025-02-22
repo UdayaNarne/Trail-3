@@ -17,6 +17,10 @@ app.add_middleware(
 MODEL_NAME = "UdayaNarne/fine-tuned-bert"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
+# To check working with Render
+@app.get("/")
+def read_root():
+    return {"message": "WebSocket server is running!"}
 
 # Load label map
 with open("backend/label_map.json", "r") as f:
