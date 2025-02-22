@@ -19,10 +19,10 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
 
 # Load label map
-with open("label_map.json", "r") as f:
+with open("backend/label_map.json", "r") as f:
     label_map = json.load(f)
 try:
-    with open("intent_response.json", "r") as f:
+    with open("backend/intent_response.json", "r") as f:
         intent_responses = json.load(f)
 except FileNotFoundError:
     intent_responses = {}
